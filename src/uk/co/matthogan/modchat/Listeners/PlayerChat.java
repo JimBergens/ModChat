@@ -21,7 +21,7 @@ public class PlayerChat implements Listener {
     @EventHandler
     public void onPlayerChat(AsyncPlayerChatEvent event) {
 
-            if (event.getPlayer().hasPermission("modchat.use") && event.getMessage().startsWith("!")) {
+        if (event.getPlayer().hasPermission("modchat.use") && event.getMessage().startsWith("!")) {
             event.setCancelled(true);
             final String message = ChatColor.DARK_RED + "[" + ChatColor.RED + "ModChat" + ChatColor.DARK_RED + "] "
                     + ChatColor.GREEN + event.getPlayer().getName() + ": " + event.getMessage().replace("!", "");
