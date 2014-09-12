@@ -23,17 +23,15 @@ public class PlayerChat implements Listener {
 
             if (event.getPlayer().hasPermission("modchat.use") && event.getMessage().startsWith("!")) {
             event.setCancelled(true);
-            final String message =  ChatColor.DARK_RED + "[" + ChatColor.RED + "ModChat" + ChatColor.DARK_RED + "] "
+            final String message = ChatColor.DARK_RED + "[" + ChatColor.RED + "ModChat" + ChatColor.DARK_RED + "] "
                     + ChatColor.GREEN + event.getPlayer().getName() + ": " + event.getMessage().replace("!", "");
 
-            // Send the players with the permission: modchat.use.
             for (Player player : Bukkit.getOnlinePlayers()) {
                 if (player.hasPermission("modchat.use")) {
                     player.sendMessage(message);
                 }
             }
 
-            // Send the console the same message.
             Bukkit.getConsoleSender().sendMessage(message);
         }
     }
