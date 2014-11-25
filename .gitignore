@@ -4,6 +4,9 @@ out/
 *.iml
 *.iws
 
+# Matt's Stuff
+/server
+
 # Eclipse
 .classpath
 .project

@@ -7,6 +7,7 @@ package uk.co.matthogan.modchat;
  */
 
 import org.bukkit.plugin.java.JavaPlugin;
+
 import uk.co.matthogan.modchat.Listeners.PlayerChat;
 
 /**

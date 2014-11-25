@@ -21,17 +21,24 @@ public class PlayerChat implements Listener {
     @EventHandler
     public void onPlayerChat(AsyncPlayerChatEvent event) {
 
+        // TODO: Allow users to choose their own chat identifier.
         if (event.getPlayer().hasPermission("modchat.use") && event.getMessage().startsWith("!")) {
+
+            // Stop the message from being broadcast in global chat
             event.setCancelled(true);
-            final String message = ChatColor.DARK_RED + "[" + ChatColor.RED + "ModChat" + ChatColor.DARK_RED + "] "
+
+            String message = ChatColor.DARK_RED + "[" + ChatColor.RED + "ModChat" + ChatColor.DARK_RED + "] "
                     + ChatColor.GREEN + event.getPlayer().getName() + ": " + event.getMessage().replace("!", "");
 
+            // Send the mod-chat message to only the players with the correct permission.
             for (Player player : Bukkit.getOnlinePlayers()) {
                 if (player.hasPermission("modchat.use")) {
                     player.sendMessage(message);
                 }
             }
 
+            // TODO: Add a not-shit logging functionality
+            // Creates a getto log of what's being said in the mod-chat
             Bukkit.getConsoleSender().sendMessage(message);
         }
     }
