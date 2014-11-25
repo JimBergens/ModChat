@@ -24,7 +24,7 @@ public class PlayerChat implements Listener {
         // TODO: Allow users to choose their own chat identifier.
         if (event.getPlayer().hasPermission("modchat.use") && event.getMessage().startsWith("!")) {
 
-            // Stop the message from being broadcast in global chat
+            // Stop the message from being broadcast in global chat.
             event.setCancelled(true);
 
             String message = ChatColor.DARK_RED + "[" + ChatColor.RED + "ModChat" + ChatColor.DARK_RED + "] "
@@ -37,8 +37,8 @@ public class PlayerChat implements Listener {
                 }
             }
 
-            // TODO: Add a not-shit logging functionality
-            // Creates a getto log of what's being said in the mod-chat
+            // TODO: Add a not-shit logging functionality.
+            // Creates a getto log of what's being said in the mod-chat.
             Bukkit.getConsoleSender().sendMessage(message);
         }
     }
